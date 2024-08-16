@@ -1,0 +1,41 @@
+import customtkinter
+
+root = customtkinter.CTk()
+
+customtkinter.set_appearance_mode("white")
+customtkinter.set_default_color_theme("dark-blue")
+
+root.geometry("550x350")
+def txtcevir() :
+
+    f = open("girilenmetin.txt", 'w')
+    print(f'Girdiğiniz metin : {input1.get()}', file=f)
+    f.close()
+def kirmizi():
+    label.configure(text_color="red")
+def mavi():
+    label.configure(text_color="blue")
+def yesil():
+    label.configure(text_color="green")
+frame = customtkinter.CTkFrame(master=root)
+frame.pack(pady=20, padx=60, fill="both", expand=True)
+
+label = customtkinter.CTkLabel(master=frame, text="Bir metin giriniz :")
+label.pack(pady=12, padx=10)
+
+input1 = customtkinter.CTkEntry(master=frame , placeholder_text="Bir metin giriniz.")
+input1.pack(pady=12, padx=10)
+
+buttonrenkk = customtkinter.CTkButton(master=frame, text="Yazıyı kırmızı yap." , command=kirmizi)
+buttonrenkk.pack(pady=6, padx=5,)
+
+buttonrenkm = customtkinter.CTkButton(master=frame, text="Yazıyı mavi yap." , command=mavi)
+buttonrenkm.pack(pady=6, padx=5,)
+
+buttonrenky = customtkinter.CTkButton(master=frame, text="Yazıyı yeşil yap." , command=yesil)
+buttonrenky.pack(pady=6, padx=5,)
+
+button = customtkinter.CTkButton(master=frame, text=".txt Dosyasına çevir." , command=txtcevir)
+button.pack(pady=12, padx=10)
+
+root.mainloop()
