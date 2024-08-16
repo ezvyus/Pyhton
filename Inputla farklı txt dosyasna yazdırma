@@ -1,0 +1,5 @@
+f = open("girilenmetin.txt" , 'w')
+input1 = input("Bir metin giriniz; ")
+print('Girilen metin ;', input1 , file = f)
+
+f.close()
